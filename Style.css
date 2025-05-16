@@ -1122,5 +1122,6 @@ margin-top: 3px;
 
   .contact-info li {
     margin-left: 0;
+    word-break:break-word;
   }
 }
