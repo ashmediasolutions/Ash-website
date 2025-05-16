@@ -1,0 +1,1126 @@
+/* --- Base Styles & Variables --- */
+:root {
+    /* Color palette using user-provided gradient colors */
+    --primary-color: rgba(12, 106, 176, 1); /* Blueish */
+    --secondary-color: rgba(246, 136, 38, 1); /* Orangeish */
+    --gradient-start: var(--primary-color);
+    --gradient-end: var(--secondary-color);
+
+    /* Accent color for buttons, highlights */
+    --accent-color: rgba(246, 136, 38, 1); /* Example: Coral Red */
+
+    /* Text and background colors */
+    --text-color: #333; /* Default dark text */
+    --light-text-color: #fff; /* Text on dark/colored backgrounds */
+    --bg-color: #ffffff; /* Main background */
+    --alt-bg-color: #f8f9fa; /* Alternate background for sections */
+    --border-color: #ddd; /* Borders */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* Box shadows */
+    --what-sets-us-apart-bg: linear-gradient(135deg, #eef2f3, #e6e9f0); /* Subtle light gradient for About Us box */
+
+    /* Font settings */
+    --font-primary: 'Inter', sans-serif; /* Main font */
+
+    /* Transitions */
+    --transition-speed: 0.3s; /* Default transition duration */
+}
+
+/* --- Global Resets and Base Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth; /* Enable smooth scrolling for anchor links */
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.7; /* Improve readability */
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.3;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600; /* Slightly bolder headings */
+}
+
+
+h1 { font-size: 3.7rem; } /* Main page title */
+h2 { font-size: 2.2rem; } /* Section headings */
+h3 { font-size: 1.6rem; font-weight: 400; color: #1c1c1c; } /* Section subheadings */
+h4 { font-size: 1.2rem; font-weight: 600; margin-bottom: 1rem;
+    text-align: left;} /* Smaller headings (e.g., service items) */
+
+
+
+
+
+.hero-content p {
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color); /* Default link color (blueish) */
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--secondary-color); /* Link hover color (orangeish) */
+}
+
+img {
+    max-width: 100%; /* Ensure images are responsive */
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below images */
+}
+
+ul {
+    list-style: none; /* Remove default bullet points */
+}
+
+/* --- Layout Containers --- */
+.container {
+    max-width: 1100px; /* Maximum width of content */
+    margin: 0 auto; /* Center the container */
+    padding: 0 20px; /* Padding on the sides */
+}
+
+/* --- Section Styling --- */
+.content-section {
+    padding: 80px 0; /* Vertical padding for sections */
+}
+
+.alt-bg {
+    background-color: var(--alt-bg-color); /* Alternate background color */
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    font-size: 38px;
+    font-weight: bold;
+    color: var(--primary-color); /* Blueish heading color */
+    display: flex; /* Align icon and text */
+    align-items: center;
+    justify-content: center;
+    /*gap: 10px; / Space between icon and text */
+}
+
+.section-subheading {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #666; /* Slightly lighter subheading color */
+}
+
+.section-intro {
+    text-align: center;
+    max-width: 700px; /* Limit width of intro paragraphs */
+    margin: 0 auto 3rem auto; /* Center and add bottom margin */
+    color: #555;
+}
+
+/* --- Utility Classes --- */
+.icon-left {
+    margin-right: 8px;
+    color: var(--secondary-color); /* Orangeish icon color */
+}
+
+.small-text {
+    font-size: 0.8em;
+    color: #777;
+}
+
+/* --- Header / Navigation --- */
+.main-header {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.5rem 0; /* Vertical padding */
+    position: sticky; /* Make header stick to top */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure header is above other content */
+    transition: background-color var(--transition-speed) ease;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #fff; /* or your navbar background */
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+.logo {
+    max-height: 50px; /* Control max height of logo container */
+    display: flex; /* Use flex for potential fallback text alignment */
+    align-items: center;
+}
+
+.logo a {
+    display: inline-block;
+    height: 100%;
+}
+
+.logo-image {
+    height: 50px; /* Set logo image height */
+    width: auto; /* Maintain aspect ratio */
+    display: block;
+}
+.logo-text { /* Style for fallback text */
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* Desktop Navigation Links */
+.nav-links {
+    display: flex;
+    gap: 1.5rem; /* Spacing between links */
+}
+
+.nav-links a {
+    color: var(--text-color);
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative; /* For underline effect */
+}
+
+/* Underline effect on hover/active */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Initially hidden */
+    height: 2px;
+    background-color: var(--secondary-color); /* Orange underline */
+    transition: width var(--transition-speed) ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after { /* 'active' class can be added via JS */
+    width: 100%; /* Show underline */
+}
+
+/* Mobile Navigation Toggle (Hamburger Icon) */
+.mobile-nav-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--primary-color); /* Blueish toggle */
+}
+
+/* --- Hero Section --- */
+.hero-section {
+    min-height: 90vh; /* Minimum height relative to viewport height */
+    display: flex;
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    text-align: center;
+    padding: 100px 20px; /* Padding */
+    position: relative; /* Needed for pseudo-element overlay */
+    overflow: hidden; /* Contain pseudo-element */
+    color: var(--light-text-color); /* White text for readability */
+
+    /* *** OUTER BACKGROUND: REPLACE THIS URL with your actual background image path *** */
+    background-image: url('carousel-1.jpg'); /* Placeholder */
+    background-size: cover; /* Cover the entire section */
+    background-position: center center; /* Center the image */
+    background-attachment: fixed; /* Creates a parallax-like effect on scroll */
+    width: 100%;
+    max-width: 100vw;
+    
+}
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1400px;
+  }
+  .services-container {
+    max-width: 1400px;
+  }
+}
+
+.hero-section p{
+    text-align: center;
+}
+
+/* Outer Gradient Overlay and Blur Effect for Hero Background */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* Apply the gradient using specified RGBA colors */
+    background: linear-gradient(135deg,
+    rgba(6, 80, 134, 0.8)
+    );
+    
+    z-index: 1; /* Place overlay above background image */
+}
+
+.hero-content {
+    max-width: 800px; /* Limit width of hero text content */
+    position: relative; /* Ensure content is above the overlay AND allows z-index for inner background */
+    z-index: 3; /* Place content above the outer overlay */
+    padding: 2rem; /* Add some padding so inner background blur doesn't touch edges */
+    overflow: hidden; /* Contain the inner background */
+    border-radius: 8px;
+    margin-top: 2.5rem; /* Optional: slightly rounded corners for the content area */
+}
+
+/* Inner Background for Hero Text Area */
+.hero-text-background {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* *** INNER BACKGROUND: REPLACE THIS URL with image for behind text *** */
+    background-image: url('carousel-1.jpg'); /* Placeholder */
+    background-size: cover;
+    background-position: center;
+    
+   margin: -50px; /* Extend slightly beyond padding to hide blurred edges */
+}
+
+
+.headline {
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    color: rgba(12, 106, 176, 1);
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5); /* Enhance readability over inner bg */
+    position: relative; /* Ensure text is above inner background */
+    z-index: 1;
+    
+}
+.section-heading
+.subheadline {
+    font-size: 1.4rem;
+    margin-top: 1.5rem ;
+    opacity: 0.95; /* Slightly more opaque */
+    margin-top: 20;
+    
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 1;
+    color: var(--dark-text-color);
+}
+
+.intro-paragraph {
+    font-size: 1.1rem;
+    /*margin-bottom: 2.5rem;*/
+    margin-top: 3rem;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9; /* Slightly more opaque */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 1;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center; /* Center buttons */
+    gap: 1rem; /* Space between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    position: relative; /* Ensure buttons are above inner background */
+    z-index: 1;
+    margin-top: 3rem;
+}
+
+/* --- Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.8rem; /* Button padding */
+    border-radius: 50px; /* Pill shape */
+    font-weight: 600;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-speed) ease; /* Smooth transition */
+    border: 2px solid transparent; /* Transparent border initially */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 0.5px; /* Slight letter spacing */
+}
+
+/* Primary Button Style (Accent Color) */
+.btn-primary {
+    background-color: var(--accent-color); /* Coral Red */
+    color: var(--light-text-color);
+    border-color: var(--accent-color);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Add subtle shadow */
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+    box-shadow: none;
+}
+/* Specific hover style for primary button in the hero section */
+.hero-section .btn-primary:hover {
+    background-color: var(--light-text-color); /* White background */
+    color: var(--accent-color); /* Coral text */
+    border-color: var(--light-text-color);
+}
+
+/* Secondary Button Style (Outline) */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--light-text-color); /* White text on hero */
+    border: 2px solid var(--light-text-color);
+}
+/* Secondary button style for regular content sections */
+.content-section .btn-secondary {
+    color: var(--primary-color); /* Blueish text */
+    border-color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--light-text-color); /* White background on hover */
+    color: var(--primary-color); /* Blueish text on hover */
+}
+/* Specific hover style for secondary button in non-hero sections */
+.content-section .btn-secondary:hover {
+    background-color: var(--primary-color); /* Blueish background */
+    color: var(--light-text-color); /* White text */
+}
+
+.section-heading
+
+.services-section {
+    text-align: center;
+    padding: 20px 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.section-title {
+    font-size: 38px;
+    color: rgba(12, 106, 176,1);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 20px;
+    color: black;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    justify-content: center;
+    margin-bottom: 60px;
+   
+}
+
+
+@media (max-width: 1400px) {  }
+@media (min-width: 1401px) {  }
+
+
+
+
+.service-item {
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.1s ease;
+    gap: 20px;
+    
+
+    
+}
+
+.service-icon {
+    font-size: 35px;
+    color: rgba(246, 136, 38,1);
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.service-icon img {
+display: block;
+font-size: 35px;
+width: 50px; /* Adjust as needed */
+height: auto;
+margin-bottom: 20px;
+margin-top: 3px;
+}
+
+
+.service-item h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.service-item p {
+    font-size: 16px;
+    color: black;
+    margin-bottom: 10px;
+    margin-top: 0px;
+    justify-content: left;
+}
+
+
+.service-item ul {
+  list-style: none; /* remove default bullet */
+  padding-left: 0;
+  margin: 0;
+}
+
+.service-item ul li {
+  position: relative;
+  padding-left: 1.2em; /* space for custom bullet */
+  margin-bottom: 10px;
+  line-height: 1; /* ensure vertical alignment */
+}
+
+/* Custom bullet perfectly centered vertically */
+.service-item ul {
+  list-style-type: none; /* Remove default bullet */
+  padding-left: 0; /* Reset default padding */
+  margin: 0; /* Reset default margin */
+}
+
+.service-item ul li {
+  position: relative; /* Needed for absolute positioning of the custom bullet */
+  padding-left: 1.5em; /* Space for the bullet and some gap */
+  line-height: 1.2; /* Adjust line height for better vertical alignment with text */
+  margin-bottom: 0.5em; /* Add some spacing between list items */
+}
+
+.service-item ul li::before {
+  content: "•"; /* Your bullet character */
+  position: absolute;
+  left: 0; /* Align bullet to the start of the padding */
+  top: 40%;
+  transform: translateY(-50%); /* Center vertically */
+  color: rgba(246, 136, 38, 1);
+  font-size: 1.4rem; /* Adjust bullet size */
+  line-height: 1; /* Ensure consistent line height for the bullet */
+}
+
+.service-item ul li p {
+  line-height: inherit; /* Inherit line height from the list item */
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 38px;
+  }
+
+  .service-item h3 {
+    font-size: 18px;
+  }
+
+  .service-icon {
+    font-size: 28px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .services-container {
+    grid-template-columns: repeat(3, 1fr); /* Show exactly 3 boxes per row on large screens */
+  }
+}
+
+/* --- Portfolio Section --- */
+.portfolio-grid {
+    display: grid;
+    /* Responsive grid for portfolio items */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+/* Style for individual portfolio items (links) */
+.portfolio-item {
+    position: relative; /* For overlay positioning */
+    overflow: hidden; /* Clip overlay and image zoom */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px var(--shadow-color);
+    display: block; /* Make the link a block element */
+    background-color: var(--alt-bg-color); /* Background for placeholders */
+}
+.section-heading h2{
+    font-weight: bold;
+    margin-top: 10px;
+}
+.section-subheading{
+    font-size: 20px;
+    color: black;
+    margin-bottom: 40px;
+}
+
+.portfolio-item img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Maintain square aspect ratio */
+    object-fit: cover; /* Ensure image covers the area without distortion */
+    transition: transform 0.4s ease; /* Image zoom transition */
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Overlay shown on hover */
+.portfolio-item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(11, 107, 177, 0.7); /* Semi-transparent blueish overlay */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 0; /* Hidden by default */
+    transition: opacity var(--transition-speed) ease; /* Fade transition */
+}
+
+.portfolio-item:hover .portfolio-item-overlay {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Placeholder style for portfolio items */
+.portfolio-item.placeholder {
+    aspect-ratio: 1 / 1;
+    border: 1px dashed var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #999;
+    font-size: 0.9rem;
+}
+/* Disable hover effects for placeholders */
+.portfolio-item.placeholder:hover img { transform: none; }
+.portfolio-item.placeholder:hover .portfolio-item-overlay { opacity: 0; }
+
+
+/* --- Contact Section --- */
+/* Contact Section Wrapper */
+.contact-section {
+  flex: 1 1 300px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+/* Main Container as Flexbox */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  text-align:center;
+  margin-left: 20px;
+  min-height: 400px;
+}
+
+/* Left Side with Image Background */
+/* Main Contact Container */
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  align-items: right;
+  justify-content: space-between;
+  padding: 20px;
+  flex-wrap: wrap; /* allows wrap on small screens */
+}
+
+/* Left Side: Image Section */
+.contact-image-side {
+  flex: 1;
+  background-image: url("logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain; /* more responsive than fixed percentage */
+  background-size: 250px;
+  margin-right: 200px;
+  margin-left: 400px;
+  margin: 20px;
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Separator Line */
+.separator {
+  width: 2px;
+  background-color: white;
+  height: auto;
+  min-height: 300px;
+  align-self: stretch; /* makes separator stretch full height */
+  margin: 20px;
+}
+
+/* Right Side: Text Section */
+.contact-text-side {
+  flex: 1;
+  margin: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+/* Heading */
+.section-heading {
+  font-size: 38px;
+  color: rgba(12, 106, 176, 1);
+  margin-bottom: 10px;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Contact Info List */
+.contact-info {
+  list-style-position: outside; /* keeps bullet aligned properly */
+  padding-left: 20px;
+  margin: 0;
+}
+
+.contact-info li {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: white;
+  text-align: left;
+  margin-left: -15px;
+  display: block;
+}
+
+.contact-info a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  display: block;
+}
+
+/* Social Icons */
+.social-icons-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-icons-container img {
+  width: 25px;
+  height: 25px;
+}
+
+.social-icons-container a {
+  text-align: right;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: right;
+  }
+
+  .separator {
+    display: none; /* hide separator on small screens */
+  }
+
+  .contact-image-side,
+  .contact-text-side {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .contact-text-side {
+    align-items: center;
+  }
+
+  .contact-info {
+    text-align: left;
+  }
+
+  .section-heading {
+    text-align: center;
+  }
+
+  .social-icons-container {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .social-icons-container {
+    justify-content: left; /* center horizontally */
+    flex-wrap: wrap; /* allow wrapping if too wide */
+    gap: 12px; /* consistent spacing */
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  .social-icons-container img {
+    width: 25px; /* slightly smaller for mobile */
+    height: 25px;
+    margin-left: 15px ;
+  }
+}
+
+
+/* --- Footer --- */
+.main-footer {
+    background-color: var(--text-color); /* Dark background */
+    color: var(--light-text-color); /* Light text */
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.main-footer p {
+    margin-bottom: 0;
+    text-align: center;
+    opacity: 0.8; /* Slightly faded text */
+}
+
+
+/* --- Animation Classes (Simple Fade In Up) --- */
+.animate-fade-in-up {
+    opacity: 0; /* Start hidden */
+    transform: translateY(20px); /* Start slightly lower */
+    /* Animation properties */
+    animation-name: fadeInUp;
+    animation-duration: 0.8s;
+    animation-timing-function: ease;
+    animation-fill-mode: forwards; /* Keep final state */
+}
+
+/* Animation Delays */
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+.delay-3 { animation-delay: 0.6s; }
+
+/* Keyframes for the fadeInUp animation */
+@keyframes fadeInUp {
+    to {
+        opacity: 1; /* Fade in */
+        transform: translateY(0); /* Move to original position */
+    }
+}
+
+/* --- Responsive Design Media Queries --- */
+
+/* Medium Devices (Tablets, Small Laptops: <= 992px) */
+@media (max-width: 992px) {
+    /* Adjust typography */
+    h1 { font-size: 2.5rem; }
+    .headline { font-size: 3rem; }
+    .subheadline { font-size: 1.2rem; }
+    .intro-paragraph { font-size: 1rem; }
+
+    .content-section { padding: 60px 0; } /* Reduce section padding */
+
+    /* Stack elements in About section */
+    .about-content { flex-direction: column; }
+}
+
+/* Small Devices (Landscape Phones, Large Portrait Phones: <= 768px) */
+@media (max-width: 768px) {
+    .navbar { padding: 0 15px; } /* Adjust navbar padding */
+
+    /* Mobile Navigation Styles */
+    .nav-links {
+        display: none; /* Hide desktop links by default */
+        position: absolute;
+        top: 100%; /* Position below header */
+        left: 0;
+        width: 100%;
+        background-color: white; /* Solid background for mobile menu */
+        flex-direction: column; /* Stack links vertically */
+        align-items: center;
+        padding: 1rem 0;
+        box-shadow: 0 5px 10px var(--shadow-color); /* Add shadow */
+        border-top: 1px solid var(--border-color);
+    }
+
+    .nav-links.active {
+        display: flex; /* Show menu when active class is added */
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        padding: 1rem 0;
+        display: block; /* Make links full width */
+        width: 100%;
+    }
+     .nav-links a::after { /* Remove underline effect on mobile */
+        display: none;
+     }
+
+    /* Show mobile toggle button */
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    /* Adjust Hero section */
+    .hero-section {
+        min-height: 70vh; /* Reduce height */
+        padding: 80px 15px; /* Adjust padding */
+        background-attachment: scroll; /* Disable fixed background on mobile */
+    }
+    .headline { font-size: 2.5rem; }
+    .subheadline { font-size: 1.1rem; }
+    .hero-content { padding: 1.5rem; } /* Reduce padding */
+    .hero-text-background { margin: -15px; } /* Adjust negative margin */
+
+
+    /* Adjust Services grid */
+    .services-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+
+    /* Stack Contact section elements */
+    .contact-content { flex-direction: column; }
+    
+}
+
+/* Extra Small Devices (Portrait Phones: <= 576px) */
+@media (max-width: 576px) {
+    /* Further adjust typography */
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.8rem; }
+    h3 { font-size: 1.3rem; }
+    .headline { font-size: 2.2rem; }
+    .subheadline { font-size: 1rem; }
+    .intro-paragraph { font-size: 0.95rem; }
+
+    /* Stack CTA buttons vertically and center */
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+    }
+    .btn {
+        width: 80%; /* Make buttons wider */
+        max-width: 300px; /* Limit max width */
+    }
+
+    .content-section { padding: 40px 0; } /* Reduce section padding further */
+    .container { padding: 0 15px; } /* Reduce container padding */
+
+    /* Stack service items */
+    .services-grid { grid-template-columns: 1fr; }
+
+    /* Adjust logo size */
+    .logo { max-height: 40px; }
+    .logo-image { height: 40px;}
+
+    .hero-content { padding: 1rem; } /* Further reduce padding */
+    .hero-text-background { margin: -10px; } /* Further adjust negative margin */
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center; /* Align logo and nav items vertically */
+    justify-content: space-between;
+    padding: 10px 40px; /* Adjust spacing as needed */
+  }
+
+
+
+
+.contact-section {
+    min-height: 90vh; /* Minimum height relative to viewport height */
+    display: flex;
+    position: relative; /* Needed for pseudo-element overlay */
+    overflow: hidden; /* Contain pseudo-element */
+    color: var(--light-text-color); 
+    background-image: url('finalback.jpg');
+    /*opacity: 0.25;
+    /filter: blur(2px); / Placeholder */
+    background-size: cover;
+    background-position: center;
+
+
+  
+}
+
+.contact-text-background {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* *** INNER BACKGROUND: REPLACE THIS URL with image for behind text *** */
+    background-image: url('finalback.jpg'); /* Placeholder */
+    background-size: cover;
+    background-position: center;
+    margin: -50px; 
+    text-align: right;/* Extend slightly beyond padding to hide blurred edges */
+}
+#contact-section h2 {
+  color: white; /* Or any color you prefer */
+  font-size: 2.8rem;
+}
+
+.contact-section h2{
+    color: white;
+    font-size: 2.8rem;
+    text-align: left;
+    justify-content: left;
+    
+}
+.contact-info li i{
+    display: inline-block; 
+    position: right;
+    text-align: right;
+    margin-right: 50;
+}
+.contact-info li{
+    align-items: right;
+    display: inline-block; 
+}
+
+
+.how-we-work {
+  text-align: center;
+  padding: 40px 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: rgb(225, 238, 247);
+  background-size: cover;
+
+}
+
+.how-we-work h2 {
+  font-size: 38px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: rgba(12,106, 176, 1);
+  font-weight: bold;
+}
+
+.subheading {
+  color: black;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.step {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 250px;
+  flex: 1 1 200px;
+}
+
+.step-number {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(246, 136, 38,1);
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.icon {
+  font-size: 20px;
+  color: rgba(246, 136, 38,1);
+  
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.step h3 {
+
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 16px;
+  color: #171616;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+@media (max-width: 576px) {
+  .contact-section .section-heading {
+    text-align: left;
+    margin-left: 20px;
+  }
+
+  .contact-text-side {
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .contact-info {
+    text-align: left;
+    padding-left: 20px;
+  }
+
+  .contact-info li {
+    margin-left: 0;
+  }
+}

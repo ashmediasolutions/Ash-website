@@ -1,0 +1,90 @@
+/* style.css */
+body {
+  
+  font-family: 'Inter', sans-serif;  /* Or 'Lato', sans-serif */
+
+
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: #0c0c0c;
+}
+
+.how-we-work {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.how-we-work h2 {
+  font-size: 32px;
+  color: rgba(12, 106, 176,1);
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.subheading {
+  color: black;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.step {
+  background-color: #f7f7f7;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 250px;
+  flex: 1 1 200px;
+}
+
+.step-number {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  background-color: rgba(11, 107, 177, 1);
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/*.icon {
+  font-size: 20px;
+  color: rgba(11, 107, 177, 1);
+  
+  margin-top: 10px;
+  margin-bottom: 20px;
+*/
+
+.step h3 {
+  font-size: 22px;
+  color: #000;
+  margin-bottom: 10px;
+}
+
+.step p {
+  font-size: 16px;
+  color: #171616;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step {
+    max-width: 90%;
+  }
+}

@@ -1,0 +1,115 @@
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter', sans-serif;
+}
+
+.services-section {
+    text-align: center;
+    padding: 40px 20px;
+    
+    
+}
+
+.section-title {
+    font-size: 32px;
+    color:rgba(11, 107, 177, 1); 
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.section-subtitle {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  
+  
+}
+
+/*.service-item {
+    background-color: rgb(146, 209, 230);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    
+    background-size: cover;
+    background-position: center;
+     /* Blur amount */
+    /*-webkit-filter: blur(3px);*/
+    /*opacity: 1s; /* Adjust opacity for readability */
+    /*z-index: -1;*/
+
+
+.service-item {
+  background-color: white ;/* light blue background */
+  border-radius: 12px;
+  padding: 30px;
+  text-align: left;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+  margin-top: 20px;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+}
+.service-icon {
+    font-size: 32px;
+    color: rgba(12, 106, 176, 1);
+    margin-bottom: 60px;
+    
+}
+
+.service-item h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 100px;
+
+}
+
+.service-item p {
+    font-size: 14px;
+    color: #333;
+}
+
+.service-item ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #333;
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
+.service-item ul li {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .section-title {
+        font-size: 24px;
+    }
+
+    .service-item h3 {
+        font-size: 18px;
+    }
+
+    .service-icon {
+        font-size: 28px;
+    }
+}
+@media screen and (min-width: 992px) {
+  .services-container {
+    grid-template-columns: repeat(3, 1fr); /* Show exactly 3 boxes per row on large screens */
+  }
+}
